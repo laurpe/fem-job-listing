@@ -1,19 +1,44 @@
+import { useEffect, useState } from "react";
 import Card from "./components/Card";
+
+interface JobData {
+    company: string;
+    contract: string;
+    featured: boolean;
+    id: number;
+    languages: string[];
+    level: string;
+    location: string;
+    logo: string;
+    new: boolean;
+    position: string;
+    postedAt: string;
+    role: string;
+    tools: string[];
+}
 
 const getData = async <T,>(url: string): Promise<T> => {
     const response = await fetch(url);
-    const data = response.json() as Promise<T>;
-    return data;
+    return response.json() as Promise<T>;
 };
 
-function App() {
-    const data = getData("data.json");
-    console.log(data);
+const App = () => {
+    const [jobs, setJobs] = useState<JobData[]>([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await getData<JobData[]>("data.json");
+            setJobs(result);
+        };
+        fetchData().catch((error) => console.error(error));
+    }, []);
+
     return (
         <div>
-            <Card />
+            {jobs.map((job) => (
+                <Card job={job} />
+            ))}
         </div>
     );
-}
+};
 
 export default App;
