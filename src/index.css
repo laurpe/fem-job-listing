@@ -1,5 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --primary-cyan: hsl(180, 29%, 50%);
+    --background-cyan: hsl(180, 52%, 96%);
+    --tablet-cyan: hsl(180, 31%, 95%);
+    --dark-cyan: hsl(180, 8%, 52%);
+    --very-dark-cyan: hsl(180, 14%, 20%);
+}
+
+body {
+    background-color: var(--background-cyan);
+    font-family: "Spartan", sans-serif;
+    color: var(--very-dark-cyan);
+    font-size: 15px;
+}
+
+.job-container {
+    background-color: white;
+    margin: 20px;
+    box-shadow: 0 5px 10px -2px var(--primary-cyan);
+    padding: 35px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job-container ul li {
+    display: inline-block;
+}
+
+.job-left {
+    display: flex;
+}
+
+.job-subheader {
+    display: flex;
+    align-items: center;
+    color: var(--primary-cyan);
+}
+
+.job-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 30px;
+}
+
+.job-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.job-misc {
+    color: var(--dark-cyan);
+}
+
+.job-position h2 {
+    font-size: 18px;
+}
+
+.job-language {
+    background-color: var(--background-cyan);
+    color: var(--primary-cyan);
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.job-misc li:not(:last-child):after {
+    content: "\00b7";
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.job-company {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.pill {
+    margin-left: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    line-height: 20px;
+    padding: 5px;
+    border-radius: 1000px;
+    color: white;
+}
+
+.pill.new {
+    background-color: var(--primary-cyan);
+}
+
+.pill.featured {
+    background-color: var(--very-dark-cyan);
+}
+
+/* .pill > * {
+    margin: auto;
+} */
+
+/* .pill {
+    margin-left: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 10px;
+    padding: 5px;
+    border-radius: 1000px;
+    color: white;
+} */
