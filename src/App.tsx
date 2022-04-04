@@ -35,7 +35,7 @@ const App = () => {
     return (
         <div>
             {jobs.map((job) => (
-                <Card job={job} />
+                <Card job={job} key={job.id} />
             ))}
         </div>
     );
